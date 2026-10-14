@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ของขวัญสำหรับเธอ 🧸</title>
+<link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#7d6a5f;--card:#fff8ef;--brown:#6b3d28;--cream:#f7e7b4;--ink:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{height:100%}
+body{margin:0;min-height:100%;font-family:'Mali','Noto Sans Thai Looped','Sarabun',sans-serif;color:var(--ink);
+background-color:var(--bg);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' fill='none' stroke='white' stroke-opacity='.16' stroke-width='2' stroke-linejoin='round'%3E%3Cpath d='M22 8l4 10 10 1-8 7 3 10-9-6-9 6 3-10-8-7 10-1z'/%3E%3Cpath d='M98 82l3 8 8 1-6 5 2 8-7-5-7 5 2-8-6-5 8-1z'/%3E%3Ccircle cx='100' cy='24' r='9'/%3E%3Ccircle cx='40' cy='100' r='7'/%3E%3C/svg%3E");
+display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px;overflow-x:hidden}
+.screen{display:none;flex-direction:column;align-items:center;justify-content:center;gap:12px;width:100%}
+.screen.on{display:flex;animation:fade .6s}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+h1{font-size:1.35rem;font-weight:600;margin:0;text-align:center}
+p{margin:0}
+#msg{min-height:1.6em;text-align:center;color:var(--cream)}
+.pd{display:flex;gap:14px;margin:6px 0}.pd i{width:16px;height:16px;border-radius:50%;border:2px solid var(--cream);transition:.2s}.pd i.on{background:var(--cream)}
+.pd.shake{animation:sh .4s}
+@keyframes sh{20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
+.pad{display:grid;grid-template-columns:repeat(3,68px);gap:12px}
+.pad button{height:56px;border-radius:28px;border:0;background:rgba(255,255,255,.18);color:#fff;font:600 1.4rem 'Mali',sans-serif;cursor:pointer}
+.pad button:active{background:rgba(255,255,255,.38)}
+.pad button.ph{visibility:hidden}
+#stageWrap{width:min(88vw,360px);cursor:pointer;touch-action:manipulation}
+svg{width:100%;height:auto;display:block;overflow:visible}
+#cap{min-height:3em;text-align:center;font-size:1.1rem;max-width:20em}
+.dots{display:flex;gap:8px}.dots i{width:12px;height:12px;border-radius:50%;border:2px solid var(--cream);transition:.3s}.dots i.on{background:var(--cream)}
+.candle{animation:pop .4s ease-out;transform-box:fill-box;transform-origin:center bottom}
+@keyframes pop{from{transform:translateY(-40px);opacity:0}to{transform:none;opacity:1}}
+.flame{animation:fl .45s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:center bottom;transition:opacity 1s}
+.out .flame{opacity:0;animation:none}
+@keyframes fl{from{transform:scale(1,1)}to{transform:scale(.88,1.12) rotate(5deg)}}
+#ghost{animation:gp 1s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes gp{50%{opacity:.35}}
+.bump{animation:bp .3s;transform-box:fill-box;transform-origin:center bottom}
+@keyframes bp{40%{transform:scale(1.03,.97)}}
+#card{position:fixed;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;gap:30px;background:rgba(60,40,30,.8);padding:20px;z-index:5}
+#card.show{display:flex;animation:fade .8s}
+#hint2{margin:0;color:var(--cream);text-align:center}
+#env{position:relative;width:min(76vw,290px);height:min(50vw,190px);cursor:pointer;animation:rise .9s ease-out}
+@keyframes rise{from{transform:translateY(100px) scale(.6);opacity:0}to{transform:none;opacity:1}}
+#env.gone,#hint2.gone{display:none}
+.eback{position:absolute;inset:0;border-radius:10px;background:#d4b180}
+.peek{position:absolute;left:7%;right:7%;top:8%;height:84%;background:#fffaf0;border-radius:6px;transition:transform .8s ease .5s;z-index:2}
+.efront{position:absolute;inset:0;border-radius:10px;z-index:3;pointer-events:none;background:linear-gradient(135deg,transparent 49.5%,#ecd0a4 50%) left/50% 100% no-repeat,linear-gradient(225deg,transparent 49.5%,#ecd0a4 50%) right/50% 100% no-repeat}
+.efront::after{content:'';position:absolute;inset:0;border-radius:10px;background:#e3c18c;clip-path:polygon(0 100%,100% 100%,50% 38%)}
+.flap{position:absolute;left:0;right:0;top:0;height:58%;background:#d2ad78;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .6s ease;z-index:4}
+.seal{position:absolute;left:50%;top:50%;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff6b7f,#c1263f 70%);color:#ffd9df;display:flex;align-items:center;justify-content:center;font-size:1.3rem;box-shadow:0 3px 6px rgba(0,0,0,.35);z-index:5;transition:opacity .3s}
+#env.open .flap{transform:rotateX(180deg);z-index:1}
+#env.open .seal{opacity:0}
+#env.open .peek{transform:translateY(-55%)}
+.paper{display:none;position:relative;width:min(86vw,340px);max-height:80vh;overflow:auto;background:#fffaf0;color:var(--brown);border-radius:6px;padding:34px 22px 22px;text-align:center;box-shadow:0 14px 40px rgba(0,0,0,.4);transform:rotate(-1deg)}
+.paper.show{display:block;animation:unfold .7s ease-out}
+@keyframes unfold{from{transform:translateY(60px) scale(.8) rotate(-4deg);opacity:0}to{transform:rotate(-1deg);opacity:1}}
+.paper h2{margin:0 0 10px;font-size:1.35rem;font-weight:600;color:#c8506f}
+.tape{position:absolute;top:-12px;left:50%;width:96px;height:26px;margin-left:-48px;transform:rotate(-3deg);background:repeating-linear-gradient(45deg,#ffd3de 0 8px,#fff0f3 8px 16px);opacity:.92;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+#letter{white-space:pre-line;font-size:1rem;line-height:2rem;background:repeating-linear-gradient(transparent 0 calc(2rem - 1px),#f1cdd6 calc(2rem - 1px) 2rem)}
+.paper button{margin-top:16px;border:0;border-radius:20px;padding:8px 18px;background:var(--cream);color:var(--brown);font:600 .95rem 'Mali',sans-serif;cursor:pointer}
+#cf{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:10}
+#snd{position:fixed;top:calc(env(safe-area-inset-top,0px) + 10px);right:12px;z-index:20;width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.2);font-size:1.2rem;cursor:pointer}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<canvas id="cf"></canvas>
+<button id="snd" aria-label="เปิด/ปิดเสียง">🔊</button>
+<div class="screen on" id="lock">
+ <h1>🎁 มีของขวัญรออยู่</h1>
+ <p id="hintTxt" style="text-align:center">ใส่รหัสเพื่อเปิด<br>ใบ้: วันเกิดของเธอ (วัน+เดือน)</p>
+ <div class="pd" id="pd"></div>
+ <p id="msg"></p>
+ <div class="pad" id="pad"></div>
+</div>
+
+<div class="screen" id="stage">
+ <h1 id="ttl">ปักเทียนให้เธอหน่อยนะ</h1>
+ <div id="stageWrap" role="button" aria-label="แตะเพื่อปักเทียน">
+ <svg id="bear" viewBox="0 0 300 400">
+  <defs>
+   <radialGradient id="fg" cx="45%" cy="35%" r="70%"><stop offset="0" stop-color="#95603a"/><stop offset="1" stop-color="#5c3520"/></radialGradient>
+   <radialGradient id="mz" cx="50%" cy="40%" r="70%"><stop offset="0" stop-color="#d9a070"/><stop offset="1" stop-color="#b17a52"/></radialGradient>
+   <pattern id="stripe" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(30)"><rect width="12" height="12" fill="#fff"/><rect width="6" height="12" fill="#b4d98e"/></pattern>
+   <linearGradient id="ck" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cc8d5b"/><stop offset="1" stop-color="#7f4426"/></linearGradient>
+   <g id="sb"><path d="M0 -7C7 -8 9 0 0 9C-9 0 -7 -8 0 -7z" fill="#ef3b52"/><path d="M-5 -7l5 -3 5 3-5 2z" fill="#4caf50"/><circle cx="-3" cy="-1" r=".9" fill="#ffe9a8"/><circle cx="3" cy="0" r=".9" fill="#ffe9a8"/><circle cx="0" cy="4" r=".9" fill="#ffe9a8"/><path d="M-4.5 -3Q-5.5 0 -4 1.5" stroke="#fff" stroke-width="1.2" fill="none" opacity=".6"/></g>
+   <filter id="fur" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="7"/></filter>
+  </defs>
+  <g id="bearG">
+   <g filter="url(#fur)" fill="url(#fg)">
+    <ellipse cx="150" cy="285" rx="98" ry="105"/>
+    <ellipse cx="72" cy="352" rx="52" ry="38"/><ellipse cx="228" cy="352" rx="52" ry="38"/>
+    <circle cx="70" cy="70" r="34"/><circle cx="230" cy="70" r="34"/>
+    <circle cx="150" cy="142" r="92"/>
+   </g>
+   <circle cx="70" cy="72" r="17" fill="#e8b496" opacity=".9"/><circle cx="230" cy="72" r="17" fill="#e8b496" opacity=".9"/>
+   <ellipse cx="150" cy="176" rx="34" ry="26" fill="url(#mz)" filter="url(#fur)"/><ellipse cx="90" cy="172" rx="14" ry="9" fill="#ff8fa3" opacity=".6"/><ellipse cx="210" cy="172" rx="14" ry="9" fill="#ff8fa3" opacity=".6"/>
+   <ellipse cx="150" cy="164" rx="10" ry="7" fill="#3d2216"/><ellipse cx="147" cy="161.5" rx="3.5" ry="1.8" fill="#fff" opacity=".5"/><path d="M150 171v4M150 175q-6 6-12 1M150 175q6 6 12 1" stroke="#3d2216" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+   <circle cx="106" cy="146" r="11" fill="#1d1109"/><circle cx="194" cy="146" r="11" fill="#1d1109"/>
+   <circle cx="102" cy="142" r="4" fill="#fff"/><circle cx="190" cy="142" r="4" fill="#fff"/><circle cx="110" cy="151" r="2" fill="#fff" opacity=".8"/><circle cx="198" cy="151" r="2" fill="#fff" opacity=".8"/>
+   <g transform="translate(152 66) rotate(-7)">
+    <path d="M-32 0C-30 -28 -14 -46 0 -48C14 -46 30 -28 32 0z" fill="#6b3d28"/>
+    <ellipse cx="0" cy="2" rx="38" ry="10" fill="#f7e7b4"/>
+    <path d="M0 -62l5 11 12 1-9 8 3 12-11-7-11 7 3-12-9-8 12-1z" fill="#fbf0c4" stroke="#fbf0c4" stroke-width="5" stroke-linejoin="round" transform="translate(0 4) scale(.85)"/>
+    <text x="0" y="-18" text-anchor="middle" font-family="Mali,sans-serif" font-size="11" fill="#fff" transform="rotate(-8)">Happy</text>
+    <path d="M-7 -9q7 7 14 0" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
+   </g>
+   <!-- cake -->
+   <ellipse cx="150" cy="342" rx="80" ry="11" fill="#2c1a10" opacity=".25"/>
+   <ellipse cx="150" cy="335" rx="78" ry="12" fill="#fffaf3" stroke="#e8dcc8" stroke-width="2"/>
+   <ellipse cx="150" cy="292" rx="58" ry="46" fill="url(#ck)"/>
+   <path d="M112 316Q150 328 188 316L188 323Q150 335 112 323z" fill="#fff0cf"/>
+   <ellipse cx="122" cy="302" rx="16" ry="8" fill="#fff" opacity=".18" transform="rotate(-30 122 302)"/>
+   <path d="M91 282C88 245 212 245 209 282 198 270 190 290 178 276 168 290 160 272 150 284 140 272 132 290 122 276 110 290 102 270 91 282z" fill="#fffaf0" stroke="#f1dfbf" stroke-width="1.5"/>
+   <g stroke-width="2.6" stroke-linecap="round"><path d="M104 272l3-2" stroke="#ff8fa3"/><path d="M198 272l-3-2" stroke="#8fd3ff"/><path d="M138 272l2-3" stroke="#ffd36b"/><path d="M162 271l-2-3" stroke="#a6e28f"/><path d="M116 266l3 1" stroke="#c9a6ff"/><path d="M184 266l-3 1" stroke="#ff8fa3"/></g>
+   <use href="#sb" x="123" y="279"/><use href="#sb" x="150" y="284"/><use href="#sb" x="177" y="279"/>
+   <circle cx="130" cy="303" r="5.5" fill="#1d1109"/><circle cx="170" cy="303" r="5.5" fill="#1d1109"/>
+   <circle cx="128" cy="301" r="1.8" fill="#fff"/><circle cx="168" cy="301" r="1.8" fill="#fff"/>
+   <path d="M143 311q7 6 14 0" stroke="#1d1109" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+   <circle cx="114" cy="311" r="6.5" fill="#ff9aa8" opacity=".6"/><circle cx="186" cy="311" r="6.5" fill="#ff9aa8" opacity=".6"/>
+   <circle id="ghost" r="7" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="3 3"/>
+   <g id="candles"></g>
+   <g filter="url(#fur)" fill="url(#fg)">
+    <ellipse cx="90" cy="305" rx="30" ry="42" transform="rotate(-22 90 305)"/><ellipse cx="210" cy="305" rx="30" ry="42" transform="rotate(22 210 305)"/>
+   </g>
+  </g>
+ </svg>
+ </div>
+ <div class="dots" id="dots"><i></i><i></i><i></i><i></i><i></i></div>
+ <p id="cap">แตะที่เค้กเพื่อปักเทียนเล่มแรก 🕯️</p>
+</div>
+
+<div id="card">
+ <p id="hint2">แตะซองเพื่อเปิดอ่าน 💌</p>
+ <div id="env"><div class="eback"></div><div class="peek"></div><div class="efront"></div><div class="flap"></div><div class="seal">♥</div></div>
+ <div class="paper" id="paper"><div class="tape"></div><h2>🎂 Happy Birthday</h2><div id="letter"></div><button id="again">ดูอีกครั้ง</button></div>
+</div>
+
+<script>
+// ===== แก้ตรงนี้ได้ =====
+var PIN  = "0901";        // รหัส = วันเกิดของเธอ เช่น 1410 = 14 ตุลา
+var NAME = "คนสวย";       // ชื่อเธอ
+var MESSAGE = "สุขสันต์วันเกิดนะ {name} 🎂\n\nขอให้ปีนี้เป็นปีที่ใจดีกับเธอ\nมีแต่เรื่องน่ารักๆ เข้ามาทุกวัน\nและได้ยิ้มเยอะๆ แบบที่ทำให้คนรอบข้างอารมณ์ดีไปด้วย\n\nวันนี้เป็นวันของเธอ ขอให้ได้กินเค้กอร่อยๆ\n\nปล. หมีตัวนี้ฝากบอกว่า ยิ้มแบบนี้ต่อไปนะ 🧸💗";
+var CAPS = ["แตะที่เค้กเพื่อปักเทียนเล่มแรก 🕯️",
+ "เล่มที่ 1 แล้ว… หมีเริ่มตื่นเต้น",
+ "เล่มที่ 2 เหมือนมีอะไรซ่อนอยู่นะ 👀",
+ "เล่มที่ 3 ใจเต้นแล้วนะ",
+ "เล่มที่ 4 อีกเล่มเดียวเท่านั้น!",
+ "เย้!! อธิษฐานแล้วเป่าเลย 🙏"];
+// =======================
+var q = new URLSearchParams(location.search).get("to"); if (q) NAME = q;
+var $ = function(id){return document.getElementById(id)};
+// --- เสียง (สังเคราะห์เป็นกล่องดนตรี) ---
+var AC = null, master = null, muted = false;
+function ctx(){
+  if (!AC) { var C = window.AudioContext || window.webkitAudioContext; if (C) { AC = new C(); master = AC.createGain(); master.connect(AC.destination); } }
+  if (AC && AC.state === "suspended") AC.resume();
+  return AC;
+}
+function tone(f, t, d, v){
+  var a = ctx(); if (!a) return;
+  var o = a.createOscillator(), g = a.createGain(), st = a.currentTime + t;
+  o.type = "triangle"; o.frequency.value = f;
+  g.gain.setValueAtTime(0.0001, st); g.gain.exponentialRampToValueAtTime(v || .18, st + .01); g.gain.exponentialRampToValueAtTime(0.0001, st + d);
+  o.connect(g); g.connect(master); o.start(st); o.stop(st + d + .05);
+}
+var MEL = [[392,.75],[392,.25],[440,1],[392,1],[523,1],[494,2],[392,.75],[392,.25],[440,1],[392,1],[587,1],[523,2],[392,.75],[392,.25],[784,1],[659,1],[523,1],[494,1],[440,1],[698,.75],[698,.25],[659,1],[523,1],[587,1],[523,2]];
+function melody(){ var t = .2; MEL.forEach(function(m){ tone(m[0], t, Math.max(m[1] * .5, .6), .16); tone(m[0] * 2, t, .35, .04); t += m[1] * .42; }); }
+$("snd").addEventListener("click", function(){ ctx(); muted = !muted; master.gain.value = muted ? 0 : 1; this.textContent = muted ? "🔇" : "🔊"; });
+// --- confetti ---
+function confetti(){
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var c = $("cf"), x = c.getContext("2d"), P = [], i;
+  c.width = innerWidth; c.height = innerHeight;
+  var cols = ["#ff8fb3","#ffd36b","#8fd3ff","#b4d98e","#c9a6ff","#ffffff"];
+  for (i = 0; i < 110; i++) P.push({x:Math.random()*c.width, y:-20-Math.random()*c.height*.6, w:6+Math.random()*6, h:8+Math.random()*8, vy:2+Math.random()*3, vx:(Math.random()-.5)*2, r:Math.random()*6, vr:(Math.random()-.5)*.3, c:cols[i%cols.length]});
+  var t0 = performance.now();
+  (function f(t){
+    x.clearRect(0,0,c.width,c.height); var alive = false;
+    P.forEach(function(p){ p.y += p.vy; p.x += p.vx + Math.sin(p.y/30); p.r += p.vr; if (p.y < c.height + 20) alive = true;
+      x.save(); x.translate(p.x,p.y); x.rotate(p.r); x.fillStyle = p.c; x.fillRect(-p.w/2,-p.h/2,p.w,p.h); x.restore(); });
+    if (alive && t - t0 < 7000) requestAnimationFrame(f); else x.clearRect(0,0,c.width,c.height);
+  })(t0);
+}
+// --- PIN ---
+var entered = "";
+$("pd").innerHTML = PIN.split("").map(function(){return "<i></i>"}).join("");
+var keys = ["1","2","3","4","5","6","7","8","9","","0","⌫"];
+$("pad").innerHTML = keys.map(function(k){return k===""?'<button class="ph" tabindex="-1"></button>':'<button data-k="'+k+'">'+k+'</button>'}).join("");
+$("pad").addEventListener("click", function(e){
+  ctx();
+  var k = e.target.dataset && e.target.dataset.k; if (!k) return;
+  $("msg").textContent = "";
+  if (k === "⌫") entered = entered.slice(0,-1); else if (entered.length < PIN.length) entered += k;
+  [].forEach.call($("pd").children, function(d,i){ d.className = i < entered.length ? "on" : "" });
+  if (entered.length === PIN.length) {
+    if (entered === PIN) { $("lock").classList.remove("on"); $("stage").classList.add("on"); }
+    else { $("pd").classList.add("shake"); $("msg").textContent = "รหัสไม่ถูกนะ ลองอีกทีน้า 🥺";
+      setTimeout(function(){ entered=""; $("pd").classList.remove("shake"); [].forEach.call($("pd").children,function(d){d.className=""}) }, 450); }
+  }
+});
+// --- เทียน ---
+var NS = "http://www.w3.org/2000/svg", n = 0;
+var SLOTS = [[112,266,-16],[131,261,-8],[150,259,0],[169,261,8],[188,266,16]];
+var g = $("candles"), dots = document.querySelectorAll("#dots i");
+function ghost(){ if (n < 5) { $("ghost").setAttribute("cx", SLOTS[n][0]); $("ghost").setAttribute("cy", SLOTS[n][1]); } else $("ghost").style.display = "none"; }
+ghost();
+$("stageWrap").addEventListener("click", function(){
+  if (n >= 5) return;
+  var s = SLOTS[n], o = document.createElementNS(NS, "g");
+  o.setAttribute("transform", "translate("+s[0]+" "+s[1]+") rotate("+s[2]+")");
+  o.innerHTML = '<g class="candle"><rect x="-5.5" y="-50" width="11" height="52" rx="3" fill="url(#stripe)"/>' +
+    '<g class="flame"><path transform="translate(0 -52)" d="M0 0C-8 -8 -5 -18 0 -25C5 -18 8 -8 0 0z" fill="#ff9a3c"/><path transform="translate(0 -52)" d="M0 -1C-3 -5 -2 -10 0 -14C2 -10 3 -5 0 -1z" fill="#ffe08a"/></g></g>';
+  g.appendChild(o);
+  var b = $("bearG"); b.classList.remove("bump"); void b.getBoundingClientRect(); b.classList.add("bump");
+  dots[n].classList.add("on"); n++; ghost();
+  tone([523,587,659,784,880][n-1], 0, .5, .2);
+  $("cap").textContent = CAPS[n];
+  if (n === 5) finish();
+});
+function finish(){
+  $("ttl").textContent = "🎉 สุขสันต์วันเกิด!";
+  melody();
+  setTimeout(function(){ g.classList.add("out"); confetti(); }, 2200);
+  setTimeout(function(){
+    $("letter").textContent = MESSAGE.replace("{name}", NAME);
+    $("card").classList.add("show");
+  }, 3400);
+}
+$("env").addEventListener("click", function(){
+  if (this.classList.contains("open")) return;
+  this.classList.add("open"); $("hint2").style.visibility = "hidden";
+  setTimeout(function(){ $("env").classList.add("gone"); $("hint2").classList.add("gone"); $("paper").classList.add("show"); confetti(); }, 1700);
+});
+$("again").addEventListener("click", function(){ location.reload(); });
+</script>
+</body>
+</html>
